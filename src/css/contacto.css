@@ -1,0 +1,186 @@
+form {
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    width: 700px;
+    height: 550px;
+    position: relative;
+    font-family: "akzidenz-grotesk";
+    z-index: 1;
+}
+form::before { 
+    position: absolute;
+    top: -2px;
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: -1px;
+    content: '';
+    width: 46px;
+    height: 2px;
+    background-color: #fff;
+}
+
+form > div {
+    position: absolute;
+    bottom: -35px;
+    right: -35px;
+    border: 2px solid #fff;
+    display: flex;
+    height: 550px;
+    width: 700px;
+    flex-direction: column;
+    background-color: #10131A;
+    align-items: center;
+    background-image: url(../images/form.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 670px 530px;
+}
+
+form > div::before { 
+    position: absolute;
+    top: -35px;
+    right: -14.9px;
+    transform: rotate(45deg);
+    transform-origin: 0px;
+    content: '';
+    width: 47px;
+    height: 2px;
+    background-color: #fff;
+}
+
+form > div::after { 
+    position: absolute;
+    bottom: 31.5px;
+    left: -34px;
+    transform: rotate(45deg);
+    transform-origin: 0px;
+    content: '';
+    width: 47px;
+    height: 2px;
+    background-color: #fff;
+}
+
+input, textarea {
+    width: 80%;
+    resize: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+input:hover, textarea:hover {
+    border: #61dafb 1px solid;
+}
+
+textarea:focus {
+    background-image: none;
+}
+
+textarea {
+    height: 36%;
+    background-image: url(../images/x.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 610px 225px;
+    font-family: "akzidenz-grotesk";
+}
+
+#enviar {
+    font-size: 20px;
+    padding: 7px 25px;
+    margin: 25px 0 10px;
+    position: relative;
+}
+
+#enviar:hover {
+    font-weight: 900;
+    border: 2px solid #61dafb;
+  }
+
+#enviar:active {
+    background-color: #61dafb;
+    color: #10131A;
+}
+
+#svg {
+    position: absolute;
+    right: -40px;
+}
+
+label {
+    padding: 0;
+    margin: 20px 0 5px 70px;
+    align-self:flex-start;
+    font-size: 20px;
+}
+
+.formulario {
+    background-color: #10131A;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+#circuloo {
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px dashed #fff;
+    top: 55vh;
+    left: 80px;
+}
+
+.figuras {
+    position: absolute;
+    z-index: 0;
+}
+
+#rectan {
+    box-sizing: border-box;
+    transform:skewY(60deg);
+    width: 80px;
+    height: 80px;
+    border-top: 3px solid #fff;
+    border-bottom: 5px solid #fff;
+    top: 860px;
+    left: 790px;
+}
+
+#linea {
+    transform:rotate(55deg);
+    width: 300px;
+    height: 8px;
+    border-top: 2px dashed #fff;
+    top: 280px;
+    left: -80px;
+}
+
+#rombo {
+    transform:skewY(20deg) rotate(-60deg);
+    width: 300px;
+    height: 250px;
+    border: 3px solid #fff;
+    top: 200px;
+    right: -190px;
+}
+
+@media (max-width: 780px) {
+    form {
+        width: 500px;
+    }
+    form > div {
+        width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    form {
+        left: -20px;
+        width: 270px;
+    }
+    form > div {
+        width: 270px;
+    }
+    label {
+        margin: 20px 0 5px 25px;
+    }
+}

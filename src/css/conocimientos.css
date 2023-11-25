@@ -1,0 +1,285 @@
+#tiempo {
+    width: 3px;
+    height: 150px;
+    margin: 140px 0;
+    background-color: #fff;
+    position: relative;
+    animation: timeline 2s 0.2s forwards;
+}
+
+@keyframes timeline {
+    to {
+        height: 1250px;
+    }
+}
+
+/* @keyframes timeline {
+    to {
+        height: 85vh;
+    }
+} */
+
+
+body {
+    overflow-y: auto;
+}
+
+#tiempo::before {
+    content: '';
+    width: 0px;
+    height: 50px;
+    border-right: 3px dashed #fff;
+    position: absolute;
+    top: -54px;
+    left: 0px;
+}
+
+
+#tiempo::after {
+    content: '';
+    width: 0px;
+    height: 50px;
+    border-right: 3px dashed #fff;
+    position: absolute;
+    bottom: -54px;
+    left: 0px;
+}
+
+.estudios {
+    width: 50px;
+    height: 150px;
+    border: 3px solid #fff;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+}
+
+
+.estudios::after {
+    content: '';
+    width: 30px;
+    background-color: #10131A;
+    top: -5px;
+    position: absolute;
+    left: 12px;
+    height: 107%;
+    z-index: 0 !important;
+    animation: cajasaf 1s 0.2s forwards;
+}
+
+@keyframes cajasaf {
+    to {
+        width: 120px;
+        left: 42px;
+    }
+}
+
+
+
+.estudios > h3 {
+    color: #fff;
+    z-index: 2 !important;
+    position: relative;
+    font-family: "Druk Wide Web";
+    font-size: 14px;
+    margin: 2px 0px;
+    opacity: 0;
+    animation: texto 1s 1.2s forwards;
+}
+
+.textoestudios {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #2b2d33f1;
+    z-index: 3;
+    transition: 1s;
+    opacity: 0 ;
+}
+
+.textoestudios:hover { 
+    opacity: 1;
+}
+
+.textoestudios > p {
+    padding: 0;
+    text-align: left;
+    margin: 0;
+    font-family: "akzidenz-grotesk";
+    position: relative;
+    font-size: 16px;
+    z-index: 3 !important;
+}
+
+.izquierda {
+    top: 40px;
+    left: -100px;
+    animation: cajasiz 1s 0.2s forwards;
+}
+
+
+
+.izquierda::after {
+    content: '2018-2020';
+    font-family: "akzidenz-grotesk";
+    font-size: 13px;
+}
+
+.izquierda::before {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    right: -50px;
+}
+
+#smr, #smr::after {
+    animation-delay: 0.2s;
+}
+
+#aje, #aje::after {
+    animation-delay: 0.4s;
+}
+
+#daw, #daw::after {
+    animation-delay: 0.6s;
+}
+
+#front, #front::after {
+    animation-name: none;
+/*     animation-delay: 0.8s; */
+}
+
+#back, #back::after {
+    animation-name: none;
+    /* animation-delay: 1s; */
+}
+
+#extras, #extras::after {
+    animation-name: none;
+   /*  animation-delay: 1.2s; */
+}
+
+.afterfx::after {
+    animation-name: cajasaf !important;
+}
+
+@keyframes cajasiz {
+    to {
+        width: 200px;
+        left: -250px;
+        opacity: 1;
+    }
+}
+
+.derecha {
+    top: 250px;
+    left: 50px;
+    animation: cajasder 1s 0.2s forwards;
+}
+
+.derecha::before {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: -50px;
+}
+
+@keyframes cajasder {
+    to {
+        width: 200px;
+        opacity: 1;
+    }
+}
+
+.derecha::after {
+    content: '2020-2021';
+    font-family: "akzidenz-grotesk";
+    font-size: 13px;
+}
+
+#daw {
+    top: 440px;
+}
+
+
+#daw::after {
+    content: '2021-2023';
+}
+
+#front {
+    top: 650px;
+}
+
+#front::after {
+    content: 'Front-end';
+}
+
+
+#back {
+    top: 850px;
+}
+
+#back::after {
+    content: 'Back-end';
+}
+
+#extras {
+    top: 1050px;
+}
+
+#extras::after {
+    content: 'Extras';
+}
+
+@media (max-width: 540px) {
+    .estudios {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .estudios::after {
+        width: 80px !important;
+        left: 20px !important;
+        height: 108% !important;
+    }
+
+    .derecha {
+        left: 20px !important;
+    }
+    .derecha::before {
+        width: 20px !important;
+        left: -20px !important;
+    }
+    .estudios > h3 {
+        font-size: 12px;
+        word-break: break-all;
+        padding: 0 10px;
+        line-height: 1.23;
+        margin:  0px 0px;
+    }
+    .textoestudios > p {
+        font-size: 13px;
+    }
+    .izquierda {
+        left: -145px !important;
+    }
+    
+    .izquierda::before {
+        width: 20px;
+        right: -22px;
+    }
+}

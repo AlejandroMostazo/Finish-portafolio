@@ -9,6 +9,7 @@
 #m {
   text-indent: 40px;
   margin-top: -10px;
+  position: relative;
 }
 
 #bolas {
@@ -122,7 +123,7 @@ a:hover > h1::before {
 
 
 #animacion {
-  position: absolute;
+  position: fixed;
   right: 72px;
   top: 42px;
   width: 10px;
@@ -145,6 +146,10 @@ a:hover > h1::before {
 @media (max-width: 600px) {
   #contenedor > a > h1 {
     font-size: 1.4em !important;
+  }
+
+  .animacion-active {
+    transform: scale(200) !important;
   }
 }
 

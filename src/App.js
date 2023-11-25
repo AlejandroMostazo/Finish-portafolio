@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
-import './particles.min';
-import particlesConfig from './particlesjs-config.json';
+
 import Navbar from './Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Experiencia from './pages/Experiencia';
@@ -10,13 +9,13 @@ import Proyectos from './pages/Proyectos';
 import About from './pages/About';
 import Conocimientos from './pages/Conocimientos';
 import Contacto from './pages/Contacto';
-
 function App() {
 
   useEffect(() => {
+    document.title = 'Alejandro Mostazo';
 
-    window.particlesJS('particles-js', particlesConfig);
   }, []);
+
 
   return (
     <div className="App">

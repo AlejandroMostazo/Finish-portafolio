@@ -8,8 +8,9 @@
   src: url(./fonts/akzidenz-grotesk.otf);
 }
 
-html {
+body {
   overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .App {
@@ -22,12 +23,27 @@ h1, h2 {
 }
 
 #desarrollador {
-  width: 220px;
-  height: 320px;
-  top: -170px;
+  width: 0px;
+  height: 0px;
+  top: 150px;
   left: 150px;
   border-bottom: none ;
   border-right: none;
+  transform-origin: bottom left 60px;
+  animation: alto 1.5s 0.3s ease-in-out forwards, ancho 1s 1.6s ease-in-out forwards;
+}
+
+@keyframes alto {
+  to {
+    height: 320px;
+    top: -170px;
+  }
+}
+
+@keyframes ancho {
+  to {
+    width: 220px;
+  }
 }
 
 #desarrollador > p {
@@ -37,6 +53,41 @@ h1, h2 {
   left: 230px;
   white-space: nowrap;
   background-color: #10131A;
+  opacity: 0;
+  animation: visible 0.2s 2.3s forwards;
+}
+
+
+@keyframes visible { 
+  to {
+    opacity: 1;
+  }
+}
+
+#desarrollador > p::after {
+  content: '';
+  position: absolute;
+  background-color: #10131A;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  display: inline;
+  border-left: solid 10px #fff;
+  animation: aparecer 1.4s 2.3s forwards;
+}
+
+
+@keyframes aparecer {
+  80% {
+    width: 0%;
+    left: 100%;
+    border-left: solid 10px #fff;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+    border: none;
+  }
 }
 
 @media (max-width: 1050px) {
@@ -72,6 +123,16 @@ h1, h2 {
   animation: descargar 0.8s linear infinite;
 }
 
+#boton:hover {
+  font-weight: 900;
+  border: 2px solid #61dafb;
+}
+
+#boton:active {
+  color: #10131A;
+  background-color: #fff;
+}
+
 @keyframes descargar {
   from {
 
@@ -83,12 +144,27 @@ h1, h2 {
 }
 
 #tecnico {
-  width: 140px;
-  height: 270px;
+  width: 0px;
+  height: 0px;
   top: -150px;
   right: 150px;
   border-top: none;
   border-left: none;
+  animation: altot 1.5s 0.2s ease-in-out forwards, anchot 1s 1.5s ease-in-out forwards;
+}
+
+
+
+@keyframes altot {
+  to {
+    height: 270px;
+  }
+}
+
+@keyframes anchot {
+  to {
+    width: 140px;
+  }
 }
 
 #tecnico > p {
@@ -96,9 +172,61 @@ h1, h2 {
   position: absolute;
   top: 237px;
   right: 150px;
+  opacity: 0;
   white-space: nowrap;
   background-color: #10131A;
+  animation: visible 0.2s 2.5s forwards;
 }
+
+#tecnico > p::after {
+  content: '';
+  position: absolute;
+  background-color: #10131A;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  display: inline;
+  border-right: solid 10px #fff;
+  animation: aparecerd 1.2s 2.7s forwards;
+}
+
+@keyframes aparecerd {
+  80% {
+    width: 0%;
+    right: 100%;
+    border-right: solid 10px #fff;
+  }
+  100% {
+    width: 0%;
+    right: 100%;
+    border: none;
+  }
+}
+
+@keyframes parpadeo {
+  60% {
+    opacity: 0;
+  }
+  65%{
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+  90%{
+    opacity: 1;
+  }
+  95%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 @media (max-width: 900px) {
   #tecnico > p { 
@@ -151,6 +279,13 @@ canvas {
   color: #61dafb;
 }
 
+#downloaded {
+  display: none;
+}
+
+#liked {
+  display: none;
+}
 .geometria {
   border: solid 3px #fff;
   position: absolute;
@@ -174,7 +309,9 @@ canvas {
   border-radius: 50%;
   top: -220px;
   left: -550px;
+  opacity: 0;
   z-index: 1;
+  animation: parpadeo 0.8s 1.6s forwards;
 }
 
 #circulo2 {
@@ -185,6 +322,8 @@ canvas {
   left: -400px;
   border: dashed;
   z-index: 0;
+  opacity: 0.5;
+  animation: parpadeo 0.8s 1.8s forwards;
 }
 
 #circulo2::before {
@@ -198,26 +337,49 @@ canvas {
 }
 
 #rectangulom{
-  width: 800px;
+  width: 0px;
   border-top: none;
   left: -400px;
+  animation: anchorm 1s 0.3s ease-in-out forwards;
+}
+
+@keyframes anchorm {
+  to {
+    width: 800px;
+  }
 }
 
 #rectangulom::after {
   content: "";
-  width: 80px;
+  width: 0px;
   border: 3px dashed #fff;
   border-top: none;
   position: absolute;
-  right: -75px;
+  right: 0px;
+  animation: anchorma 1s 1s ease-in-out forwards;
 }
 
+@keyframes anchorma {
+  to {
+    width: 80px;
+    right: -75px;
+  }
+}
+
+
 #rectangulo{
-  height: 300px;
+  height: 0px;
   border: 3px dashed #fff;
   border-right: none;
   top: -150px;
   left: 90px;
+  animation: altorec 1.2s 1.5s ease-in-out forwards;
+}
+
+@keyframes altorec {
+  to {
+    height: 300px;
+  }
 }
 
 footer {
@@ -239,16 +401,14 @@ footer > a::before {
   position: absolute;
   bottom: 0px;
   left: 0;
-  width: 100%;
+  width: 0%;
   height: 2px;
-  background-image: linear-gradient(to right, #fff 50%, #000 50%);
-  background-size: 200% 100%;
-  background-position: 100%;
-  transition: background-position 0.3s ease-out;
+  background-color: #fff;
+  transition: 0.3s ease-out;
 }
 
 footer > a:hover::before {
-  background-position: 0;
+  width: 100%;
 }
 
 
@@ -285,5 +445,15 @@ footer > a:hover::before {
   }
   footer {
     left: 10px;
+    bottom: 5px;
+  }
+}
+
+@media (max-width: 500px) { 
+  #boton {
+    top: 160px; 
+  }
+  #info {
+    top: 235px; 
   }
 }

@@ -24,26 +24,44 @@ img {
     z-index: 2;
 }
 
+@keyframes accebe {
+    to {
+        top: 0%;
+        left: 0%;
+    }
+}
+
 #accenture::before {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 35%;
+    left: 35%;
     content: '';
     width: 50px;
     height: 50px;
     border-top: dashed 3px #ffff ;
     border-left: dashed 3px #ffff ;
+    animation: accebe forwards 2s 0.3s;
 }
 
 #accenture::after {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 35%;
+    right: 35%;
     content: '';
-    width: 50%;
-    height: 100%;
+    width: 20%;
+    height: 20%;
     border-bottom: solid 3px #ffff ;
     border-right: solid 3px #ffff ;
+    animation: acceaf forwards 2s 0.3s;
+}
+
+@keyframes acceaf {
+    to {
+        bottom: 0%;
+        right: 0%;
+        width: 50%;
+        height: 100%;
+    }
 }
 
 #accenture > p {
@@ -51,6 +69,14 @@ img {
     margin: 0;
     padding: 15px 20px;
     font-size: 19px;
+    opacity: 0;
+    animation: texto 1s 2s forwards;
+}
+
+@keyframes texto {
+    to {
+        opacity: 1;
+    }
 }
 
 #emel {
@@ -61,26 +87,46 @@ img {
     z-index: 2;
 }
 
+
+
 #emel::before {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 35%;
+    left: 35%;
     content: '';
-    width: 70%;
-    height: 100%;
+    width: 20%;
+    height: 20%;
     border-top: solid 3px #ffff ;
     border-left: solid 3px #ffff ;
+    animation: emelbe forwards 2s 0.5s;
+}
+
+@keyframes emelbe {
+    to {
+        top: 0%;
+        left: 0%;
+        width: 70%;
+        height: 100%;
+    }
 }
 
 #emel::after {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 35%;
+    right: 35%;
     content: '';
     width: 50px;
     height: 50px;
     border-bottom: dashed 3px #ffff ;
     border-right: dashed 3px #ffff ;
+    animation: emelaf forwards 2s 0.5s;
+}
+
+@keyframes emelaf {
+    to {
+        bottom: 0%;
+        right: 0%;
+    }
 }
 
 #emel > p {
@@ -88,7 +134,10 @@ img {
     margin: 0;
     padding: 13px 20px;
     font-size: 19px;
+    opacity: 0;
+    animation: texto 1s 2.2s forwards;
 }
+
 
 #timeline {
     border-right: 3px solid #ffff;
@@ -97,6 +146,97 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+}
+
+#timeline::after { 
+    content: '';
+    position: absolute;
+    background-color: #10131A;
+    bottom: 0%;
+    right: -5px;
+    width: 5px;
+    rotate: 180deg;
+    height: 100%;
+    animation: timeliner forwards 2.7s 0.7s !important;
+}
+
+@keyframes timeliner {
+    to {
+        height: 0% ;
+    }
+}
+
+#fechaA{
+    position: absolute;
+    top: 150px;
+    right: -25px;
+    border-top: 3px #fff dashed;
+    border-bottom: 3px #fff dashed;
+    width: 50px;
+    height: 150px;
+    opacity: 0;
+    animation: parpadeo 2s 0.6s forwards;
+}
+
+#fechaA::after {
+    font-size: 14px;
+    content: '05/22';
+    position: relative;
+    top: -100px;
+    right: -50px;
+}
+
+
+#fechaA::before {
+    font-size: 14px;
+    content: '03/22';
+    position: relative;
+    top: -28px;
+    left: -50px;
+}
+
+#primero {
+    font-size: 14px;
+    position: relative;
+    bottom: -105px;
+    right: -50px;
+    padding: 0;
+    margin: 0;
+}
+#segundo {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    position: relative;
+    bottom: -88px;
+    right: 50px;
+}
+
+#fechaE {
+    position: absolute;
+    top: 650px;
+    right: -25px;
+    border-bottom: 3px #fff dashed;
+    width: 50px;
+    opacity: 0;
+    animation: parpadeo 2s 1s forwards;
+}
+
+#fechaE::before {
+    font-size: 14px;
+    content: '03/23';
+    position: relative;
+    top: 13px;
+    right: 42px;
+}
+
+#fechaE::after {
+    font-size: 14px;
+    content: '06/23';
+    position: relative;
+    top: 13px;
+    right: -20px;
 }
 
 #imgempresas {
@@ -135,7 +275,7 @@ img {
 
 @media (max-width: 700px) {
 
-    html {
+    body {
         overflow-y: visible;
     }
 
@@ -156,5 +296,47 @@ img {
     #timeline {
         padding: 5vh 50px 5vh 10px;
         margin-right: 0px;
+    }
+    #fechaA{
+        top: 250px;
+        right: 0px;
+        width: 25px;
+        height: 150px;
+    }
+    
+    #fechaE {
+        top: 900px;
+        right: 0px;
+        width: 25px;
+    }
+    #fechaA::after {
+        top: -55px;
+        right: 15px;
+    }
+    
+    #fechaA::before {
+        top: -30px;
+        left: auto;
+        right: 15px;
+    }
+    
+    #primero {
+        bottom: -105px;
+        right: 15px;
+
+    }
+    #segundo {
+        bottom: -120px;
+        right: 15px;
+    }
+
+    #fechaE::before {
+        top: -5px;
+        right: 15px;
+    }
+    
+    #fechaE::after {
+        top: 25px;
+        right: 50px;
     }
 }

@@ -1,0 +1,103 @@
+#yo {
+    margin-top: 100px;
+    border-radius: 10px;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.iconos {
+    width: 200px;
+    margin: 0 200px;
+}
+
+#conticonos {
+    position: absolute;
+    margin-top: 150px;
+    width: 100vw;
+    height: 83vh;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    flex-direction: column;
+}
+
+#conticonos > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 1210px) {
+    #conticonos {
+        display: none;
+    }
+    
+}
+
+#sobremi {
+    width: fit-content;
+    max-width: 900px;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    background-color: #10131A;
+}
+
+#sobremi::before {
+    content: '';
+    border-top: 3px dashed #fff;
+    border-left: 3px dashed #fff;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    animation: about forwards 2s 0.3s;
+}
+
+@keyframes about {
+    to {
+        top: 0%;
+        left: 0%;
+        width: 200px;
+        height: 100px;
+    }
+}
+
+#sobremi::after {
+    content: '';
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    width: 25%;
+    height: 20%;
+    position: absolute;
+    bottom: 35%;
+    right: 35%;
+    animation: acceaf forwards 2s 0.3s;
+}
+
+#sobremi > p {
+    font-family: "akzidenz-grotesk";
+    font-size: 22px;
+    padding: 10px 30px;
+    opacity: 0;
+    animation: texto 1s 2s forwards;
+}
+
+@media (max-width: 450px) {
+    #yo {
+        width: 200px !important;
+        height: 200px !important;
+        object-fit: cover;
+    }
+    #sobremi > p {
+        font-family: "akzidenz-grotesk";
+        font-size: 16px;
+        padding: 0px 20px;
+    }
+}
